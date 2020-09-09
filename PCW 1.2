@@ -1,0 +1,19 @@
+row_number <- 1:200
+row_number #to see the set of independent variables that respond to each of the 200 attendees of a concert
+
+age <- runif(200, min=10, max=80)
+age # ages of all 200 people (not rounded to the closest integer)
+
+height <- runif(200, min=150, max=204)
+height # to see the heights,  in cm, of all people in the auditorium
+
+Singing_talent_on_lascala_scale <- rnorm(200, mean=5, sd=3)
+Singing_talent_on_lascala_scale #shows the singing talent of each individual in the auditorium, measured on the La Scala singing scale 
+
+num_tickets <- abs(round(round(row_number/5, digits=0)+round(age*5/8)-(height-150)+round(Singing_talent_on_lascala_scale, digits=0)))-1
+num_tickets # number of tickets each individual in the auditorium has, excluding the ticket of the concert they are already attending.
+
+
+### Challenge: Can one run a regression that would enable good estimates of the coefficients
+### on the independent variables? (The coefficients in this case are in fact "0", "10", "100", and "1000"?
+### And, why/what does it mean to say that the first regression coefficient is "0"?
